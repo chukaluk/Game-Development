@@ -1,18 +1,17 @@
 package data;
 
 import org.newdawn.slick.opengl.Texture;
+
 import static helpers.Artist.*;
+import static helpers.Clock.*;
 
 public class Enemy 
 {
-	private float x;
-	private float y;
-	private int width;
-	private int height;
-	private int health;
-	private float speed;
+	private int width, height, health;
+	private float speed, x, y;
 	private Tile startTile;
-	Texture texture;
+	private Texture texture;
+	private boolean first = true;
 	
 	public Enemy(Texture texture, Tile startTile, int width, int height, float speed)
 	{
@@ -22,6 +21,14 @@ public class Enemy
 		this.width = width;
 		this.height = height;
 		this.speed = speed;
+	}
+	
+	public void Update()
+	{
+		if (first)
+			first = false;
+		else
+			x += Delta() * speed;
 	}
 	
 	public void Draw()

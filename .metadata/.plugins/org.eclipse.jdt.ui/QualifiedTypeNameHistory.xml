@@ -3,10 +3,10 @@
 <fullyQualifiedTypeName name="org.lwjgl.opengl.Display"/>
 <fullyQualifiedTypeName name="org.lwjgl.LWJGLException"/>
 <fullyQualifiedTypeName name="java.awt.DisplayMode"/>
-<fullyQualifiedTypeName name="helpers.Artist"/>
-<fullyQualifiedTypeName name="org.newdawn.slick.opengl.Texture"/>
 <fullyQualifiedTypeName name="org.newdawn.slick.util.ResourceLoader"/>
 <fullyQualifiedTypeName name="org.newdawn.slick.opengl.TextureLoader"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.opengl.Texture"/>
+<fullyQualifiedTypeName name="helpers.Artist"/>
 </qualifiedTypeNameHistroy>
