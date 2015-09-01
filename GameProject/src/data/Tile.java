@@ -32,6 +32,11 @@ public class Tile
 	{
 		return x;
 	}
+	
+	public int getXPlace()
+	{
+		return (int) x / 64;
+	}
 
 	public void setX(float x) 
 	{
@@ -41,6 +46,11 @@ public class Tile
 	public float getY() 
 	{
 		return y;
+	}
+	
+	public int getYPlace()
+	{
+		return (int) y / 64;
 	}
 
 	public void setY(float y) 

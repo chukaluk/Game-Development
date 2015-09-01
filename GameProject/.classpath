@@ -6,12 +6,13 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Users/charleshumphries/Desktop/Game-Development/lib/natives"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/charleshumphries/Desktop/Game-Development/lib/jars/lwjgl.jar">
+	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/Game-Development/lib/jars/lwjgl.jar">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Charles/Desktop/Workspace/lib/natives"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Charles/Desktop/Game-Development/lib/natives"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/charleshumphries/Desktop/Game-Development/lib/jars/lwjgl_util.jar"/>
-	<classpathentry kind="lib" path="/Users/charleshumphries/Desktop/Game-Development/lib/jars/slick-util.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/Game-Development/lib/jars/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/Game-Development/lib/jars/slick-util.jar"/>
+	<classpathentry kind="src" path="/GP - Test"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
