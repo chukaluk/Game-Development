@@ -13,6 +13,5 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/Game-Development/lib/jars/lwjgl_util.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Charles/Desktop/Game-Development/lib/jars/slick-util.jar"/>
-	<classpathentry kind="src" path="/GP - Test"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

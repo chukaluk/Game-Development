@@ -50,7 +50,12 @@ public class Enemy
 		{
 			if (checkpointReached())
 			{
-				currentCheckpoint++;
+				if(currentCheckpoint + 1 == checkpoints.size())
+				{
+					System.out.println("Enemy Reached End of Maze");
+				}
+				else
+					currentCheckpoint++;
 			}
 			else
 			{
@@ -140,22 +145,22 @@ public class Enemy
 		Tile down = grid.getTile(s.getXPlace(), s.getYPlace() + 1);
 		Tile left = grid.getTile(s.getXPlace() - 1, s.getYPlace());
 		
-		if(s.getType() == up.getType())
+		if(s.getType() == up.getType() && directions[1] != 1)
 		{
 			dir[0] = 0;
 			dir[1] = -1;
 		}
-		else if (s.getType() == right.getType())
+		else if (s.getType() == right.getType() && directions[0] != -1)
 		{
 			dir[0] = 1;
 			dir[1] = 0;
 		}
-		else if (s.getType() == down.getType())
+		else if (s.getType() == down.getType() && directions[1] != -1)
 		{
 			dir[0] = 0;
 			dir[1] = 1;
 		}
-		else if (s.getType() == left.getType())
+		else if (s.getType() == left.getType() && directions[0] != 1)
 		{
 			dir[0] = -1;
 			dir[1] = 0;
