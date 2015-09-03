@@ -35,6 +35,8 @@ public class Boot
 		Enemy e = new Enemy(quickLoad("enemy"), grid.getTile(10, 8), grid, 64, 64, 3);
 		Wave wave = new Wave(20, e);
 		Player player = new Player(grid);
+		
+		TowerCannon tower = new TowerCannon(quickLoad("cannonBase"), grid.getTile(14, 7), 10);
 		while(!Display.isCloseRequested())
 		{
 			Clock.update();
@@ -42,6 +44,7 @@ public class Boot
 			grid.draw();
 			wave.Update();
 			player.Update();
+			tower.update();
 			
 			Display.update();
 			Display.sync(60);

@@ -13,7 +13,7 @@ public class Enemy
 	private float speed, x, y;
 	private Tile startTile;
 	private Texture texture;
-	private boolean first = true;
+	private boolean first = true, alive = true;
 	private TileGrid grid;
 	
 	private ArrayList<Checkpoint> checkpoints;
@@ -52,7 +52,7 @@ public class Enemy
 			{
 				if(currentCheckpoint + 1 == checkpoints.size())
 				{
-					System.out.println("Enemy Reached End of Maze");
+					die();
 				}
 				else
 					currentCheckpoint++;
@@ -121,7 +121,10 @@ public class Enemy
 		
 		while (!found)
 		{
-			if (s.getType() != grid.getTile(s.getXPlace() + dir[0] * counter, s.getYPlace() + dir[1] * counter).getType())
+			if (s.getXPlace() + dir[0] * counter == grid.getTilesWide() ||
+					s.getYPlace() + dir[1] * counter == grid.getTilesHigh() ||
+					s.getType() != 
+					grid.getTile(s.getXPlace() + dir[0] * counter, s.getYPlace() + dir[1] * counter).getType())
 			{
 				found = true;
 				// Move counter back 1 to find tile before new tileType
@@ -169,11 +172,15 @@ public class Enemy
 		{
 			dir[0] = 2;
 			dir[1] = 2;
-			System.out.println("NO DIRECTION FOUND");
 		}
 		
 		
 		return dir;
+	}
+	
+	private void die()
+	{
+		alive = false;
 	}
 	
 	public void Draw()
@@ -255,6 +262,10 @@ public class Enemy
 	
 	public TileGrid getTileGrid() {
 		return grid;
+	}
+	
+	public boolean isAlive() {
+		return alive;
 	}
 
 	
