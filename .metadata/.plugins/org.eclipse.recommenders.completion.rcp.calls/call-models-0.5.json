@@ -8,5 +8,10 @@
     "coordinate": "jre:jre:zip:call:1.0.0",
     "location": "/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/rt.jar",
     "status": "RESOLVED"
+  },
+  "/Users/charleshumphries/Desktop/Game-Development/lib/jars/lwjgl.jar": {
+    "location": "/Users/charleshumphries/Desktop/Game-Development/lib/jars/lwjgl.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/Users/charleshumphries/Desktop/Game-Development/lib/jars/lwjgl.jar\u0027. Neither fingerprint \u00273df168ac74e4a8c96562cdff24ad352e255bf89c\u0027 nor symbolic name \u0027lwjgl\u0027 are known."
   }
 }

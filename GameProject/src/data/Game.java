@@ -1,30 +1,31 @@
 package data;
 
 import static helpers.Artist.quickLoad;
+import static helpers.Clock.*;
 
 public class Game {
 	
 	private TileGrid grid;
 	private Player player;
-	private Wave wave;
+	private WaveManager waveManager;
+	public static final int TILE_SIZE = 64;
+	
+	private float test;
 	
 	//Temp Variables
-	TowerCannon tower;
 	
 	public Game(int[][] map) {
 		grid = new TileGrid(map);
-		player = new Player(grid);
-		wave = new Wave(20, new Enemy(quickLoad("enemy"), grid.getTile(10, 8), grid, 64, 64, 3));
+		waveManager = new WaveManager(new Enemy(quickLoad("enemy"), grid.getTile(10, 8), grid, 64, 64, 70), 2,2);
+		player = new Player(grid, waveManager);
 		
-		tower = new TowerCannon(quickLoad("cannonBase"), grid.getTile(14, 7), 10);
 	}
 	
 	public void update() {
+		test += Delta();
 		grid.draw();
-		wave.Update();
-		player.Update();
-		
-		tower.update();
+		waveManager.update();
+		player.update();	
 		
 	}
 }

@@ -8,7 +8,7 @@
       "qualifier": ""
     },
     "jarFileFingerprint": "751f06b62424da056954c67288fd5c494431e350",
-    "jarFileModificationDate": "2015-01-19T00:17:18-05:00",
+    "jarFileModificationDate": "2015-01-19T01:17:18-05:00",
     "location": "/Users/charleshumphries/Desktop/Game-Development/lib/jars/lwjgl_util.jar",
     "javaRuntime": false
   },
@@ -255,7 +255,7 @@
       "qualifier": ""
     },
     "jarFileFingerprint": "3df168ac74e4a8c96562cdff24ad352e255bf89c",
-    "jarFileModificationDate": "2015-01-19T00:17:18-05:00",
+    "jarFileModificationDate": "2015-01-19T01:17:18-05:00",
     "location": "/Users/charleshumphries/Desktop/Game-Development/lib/jars/lwjgl.jar",
     "javaRuntime": false
   },
@@ -268,7 +268,7 @@
       "qualifier": ""
     },
     "jarFileFingerprint": "743c4e5d444e11c9e7dd7f3da1622f6810734619",
-    "jarFileModificationDate": "2015-08-07T19:03:12-04:00",
+    "jarFileModificationDate": "2016-01-03T15:01:39-05:00",
     "location": "/Users/charleshumphries/Desktop/Game-Development/lib/jars/slick-util.jar",
     "javaRuntime": false
   },
