@@ -1,31 +1,28 @@
 package data;
 
 import static helpers.Artist.quickLoad;
-import static helpers.Clock.*;
+import static helpers.Artist.TILE_SIZE;
 
 public class Game {
-	
+
 	private TileGrid grid;
 	private Player player;
 	private WaveManager waveManager;
-	public static final int TILE_SIZE = 64;
-	
-	private float test;
-	
-	//Temp Variables
-	
+
+
 	public Game(int[][] map) {
 		grid = new TileGrid(map);
-		waveManager = new WaveManager(new Enemy(quickLoad("enemy"), grid.getTile(10, 8), grid, 64, 64, 70), 2,2);
+		waveManager = new WaveManager(new Enemy(quickLoad("enemy"),
+				grid.getTile(10, 8), grid, TILE_SIZE, TILE_SIZE, 70, 25), 2, 2);
 		player = new Player(grid, waveManager);
-		
+		player.setup();
+
 	}
-	
+
 	public void update() {
-		test += Delta();
 		grid.draw();
 		waveManager.update();
-		player.update();	
-		
+		player.update();
+
 	}
 }

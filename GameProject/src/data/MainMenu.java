@@ -10,25 +10,32 @@ import UI.UI;
 import static helpers.Artist.*;
 
 public class MainMenu {
-	
+
 	private Texture background;
 	private UI menuUI;
-	
+
 	public MainMenu() {
 		background = quickLoad("menu");
 		menuUI = new UI();
-		menuUI.addButton("Play", "play", WIDTH / 2 - 128, (int) (HEIGHT * 0.45f));
-		menuUI.addButton("Editor", "editor", WIDTH / 2 - 128, (int) (HEIGHT * 0.55f));
-		menuUI.addButton("Quit", "quit", WIDTH / 2 - 128, (int) (HEIGHT * 0.65f));
+		menuUI.addButton("Play", "play", WIDTH / 2 - 128,
+				(int) (HEIGHT * 0.45f));
+		menuUI.addButton("Editor", "editor", WIDTH / 2 - 128,
+				(int) (HEIGHT * 0.55f));
+		menuUI.addButton("Quit", "quit", WIDTH / 2 - 128,
+				(int) (HEIGHT * 0.65f));
 	}
-	
+
 	private void updateButtons() {
-		if(Mouse.isButtonDown(0)) {
-			if(menuUI.isButtonClicked("Play"))
+		if (Mouse.isButtonDown(0)) {
+			if (menuUI.isButtonClicked("Play"))
 				StateManager.setState(GameState.GAME);
+			if (menuUI.isButtonClicked("Editor"))
+				StateManager.setState(GameState.EDITOR);
+			if (menuUI.isButtonClicked("Quit"))
+				System.exit(0);
 		}
 	}
-	
+
 	public void update() {
 		drawQuadText(background, 0, 0, 2048, 1024);
 		menuUI.draw();

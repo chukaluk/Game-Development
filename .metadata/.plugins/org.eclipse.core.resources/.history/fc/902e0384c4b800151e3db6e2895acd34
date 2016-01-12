@@ -1,0 +1,19 @@
+package data;
+
+import org.newdawn.slick.opengl.Texture;
+import static helpers.Artist.*;
+
+public enum TowerType {
+	
+	CannonRed(new Texture[]{quickLoad("cannonBase"), quickLoad("cannonGun")}, 10),
+	CannonBlue(new Texture[]{quickLoad("cannonBlue"), quickLoad("gunBlue")}, 30);
+	
+	Texture[] textures;
+	int damage;
+	
+	TowerType(Texture[] texture, int damage) {
+		this.textures = textures;
+		this.damage = damage;
+	}
+
+}

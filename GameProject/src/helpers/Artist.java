@@ -29,24 +29,20 @@ import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 import org.newdawn.slick.util.ResourceLoader;
 
-public class Artist 
-{
+public class Artist {
 	public static final int WIDTH = 1280;
 	public static final int HEIGHT = 960;
-	
-	public static void beginSession()
-	{
+	public static final int TILE_SIZE = 64;
+
+	public static void beginSession() {
 		Display.setTitle("Chuck's Game");
-		try
-		{
+		try {
 			Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
 			Display.create();
-		} 
-		catch (LWJGLException e)
-		{
+		} catch (LWJGLException e) {
 			e.printStackTrace();
 		}
-		
+
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(0, WIDTH, HEIGHT, 0, 1, -1);
@@ -55,19 +51,26 @@ public class Artist
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	}
-	
-	public static void drawQuad(float x, float y, float width, float height)
-	{
+
+	public static boolean checkCollision(float x1, float y1, float width1,
+			float height1, float x2, float y2, float width2, float height2) {
+		if (x1 + width1 > x2 && x1 < x2 + width2 && y1 + height1 > y2
+				&& y1 < y2 + height2)
+			return true;
+		return false;
+	}
+
+	public static void drawQuad(float x, float y, float width, float height) {
 		glBegin(GL_QUADS);
-		glVertex2f(x, y); //Top left corner
-		glVertex2f(x + width, y); //Top right corner
-		glVertex2f(x + width, y + height); //Bottom right corner
-		glVertex2f(x, y + height); //Bottom left corner
+		glVertex2f(x, y); // Top left corner
+		glVertex2f(x + width, y); // Top right corner
+		glVertex2f(x + width, y + height); // Bottom right corner
+		glVertex2f(x, y + height); // Bottom left corner
 		glEnd();
 	}
-	
-	public static void drawQuadText(Texture tex, float x, float y, float width, float height)
-	{
+
+	public static void drawQuadText(Texture tex, float x, float y, float width,
+			float height) {
 		tex.bind();
 		glTranslatef(x, y, 0);
 		glBegin(GL_QUADS);
@@ -82,13 +85,13 @@ public class Artist
 		glEnd();
 		glLoadIdentity();
 	}
-	
-	public static void drawQuadTextRot(Texture tex, float x, float y, float width, float height, float angle)
-	{
+
+	public static void drawQuadTextRot(Texture tex, float x, float y,
+			float width, float height, float angle) {
 		tex.bind();
 		glTranslatef(x + width / 2, y + height / 2, 0);
 		glRotatef(angle, 0, 0, 1);
-		glTranslatef(- width / 2, - height / 2, 0);
+		glTranslatef(-width / 2, -height / 2, 0);
 		glBegin(GL_QUADS);
 		glTexCoord2f(0, 0);
 		glVertex2f(0, 0);
@@ -101,28 +104,24 @@ public class Artist
 		glEnd();
 		glLoadIdentity();
 	}
-	
-	public static Texture loadTexture(String path, String fileType)
-	{
+
+	public static Texture loadTexture(String path, String fileType) {
 		Texture tex = null;
 		InputStream in = ResourceLoader.getResourceAsStream(path);
-		try
-		{
+		try {
 			tex = TextureLoader.getTexture(fileType, in);
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return tex;
 	}
-	
-	public static Texture quickLoad(String name)
-	{
+
+	public static Texture quickLoad(String name) {
 		Texture tex = null;
-		
+
 		tex = loadTexture("res/" + name + ".png", "PNG");
-		
+
 		return tex;
 	}
 }

@@ -1,0 +1,82 @@
+package data;
+
+import java.util.ArrayList;
+
+import org.newdawn.slick.opengl.Texture;
+import static helpers.Artist.drawQuadText;
+
+public abstract class Tower implements Entity {
+	
+	private float x, y;
+	private int width, height, damage;
+	private Enemy target;
+	private Texture[] textures;
+	private ArrayList<Enemy> enemies;
+	private boolean targeted;
+	
+	public Tower(TowerType type, Tile startTile) {
+		this.textures = type.textures;
+		this.damage = type.damage;
+		this.x = startTile.getX();
+		this.y = startTile.getY();
+		this.width = startTile.getWidth();
+		this.height = startTile.getHeight();
+		this.enemies = new ArrayList<Enemy>();
+		this.targeted = false;
+	}
+	
+	private Enemy acquireTarget() {
+		Enemy closest = null;
+		float closestDistance = 10000;
+		for (Enemy e : enemies) {
+			if (isInRange(e) && findDistance(e) < closestDistance) {
+				closestDistance = findDistance(e);
+				closest = e;
+			}
+		}
+		if (closest != null)
+			targeted = true;
+		return closest;
+	}
+
+	public void update() {
+		
+	}
+
+	public void draw() {
+		for (int i = 0; i < textures.length; i++)
+			drawQuadText(textures[i], x, y, width, height);
+	}
+	
+	public float getX() {
+		return x;
+	}
+
+	public float getY() {
+		return y;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setX(float x) {
+		this.x = x;
+	}
+
+	public void setY(float y) {
+		this.y = y;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+}

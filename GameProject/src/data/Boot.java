@@ -6,29 +6,20 @@ import helpers.StateManager;
 
 import org.lwjgl.opengl.Display;
 
-public class Boot 
-{
-	public Boot()
-	{
+public class Boot {
+	public Boot() {
 		beginSession();
-		
-		//Game game = new Game(map);
-		while(!Display.isCloseRequested())
-		{
+
+		while (!Display.isCloseRequested()) {
 			Clock.update();
-			
-			//game.update();
 			StateManager.update();
-			
 			Display.update();
 			Display.sync(60);
 		}
-		
 		Display.destroy();
 	}
-	
-	public static void main(String[] args)
-	{
+
+	public static void main(String[] args) {
 		new Boot();
 	}
 }

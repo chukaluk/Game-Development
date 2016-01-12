@@ -3,12 +3,13 @@ package UI;
 import org.newdawn.slick.opengl.Texture;
 
 public class Button {
-	
+
 	private String name;
 	private Texture texture;
 	private int x, y, width, height;
-	
-	public Button(String name, Texture texture, int x, int y, int width, int height) {
+
+	public Button(String name, Texture texture, int x, int y, int width,
+			int height) {
 		this.name = name;
 		this.texture = texture;
 		this.x = x;
@@ -16,7 +17,7 @@ public class Button {
 		this.width = width;
 		this.height = height;
 	}
-	
+
 	public Button(String name, Texture texture, int x, int y) {
 		this.name = name;
 		this.texture = texture;
